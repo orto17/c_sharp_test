@@ -1,0 +1,160 @@
+{
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "\ud83d\udc38 JFrog SAST",
+                    "rules": [
+                        {
+                            "id": "cs-xss",
+                            "defaultConfiguration": {
+                                "parameters": {
+                                    "properties": {
+                                        "CWE": "79"
+                                    }
+                                }
+                            },
+                            "fullDescription": {
+                                "text": "",
+                                "markdown": ""
+                            },
+                            "shortDescription": {
+                                "text": "Cross Site Scripting (XSS)"
+                            }
+                        }
+                    ]
+                }
+            },
+            "invocations": [
+                {
+                    "executionSuccessful": true,
+                    "arguments": [
+                        "/home/sagil/temp/dist/scanner/scanner",
+                        "scan",
+                        "bla.sarif",
+                        "adf"
+                    ],
+                    "workingDirectory": {
+                        "uri": "file:///home/sagil/usaf/testdata/usaf-benchmark-samples/cs/codeql-cs/CWE-079"
+                    }
+                }
+            ],
+            "results": [
+                {
+                    "message": {
+                        "text": "Untrusted input is included in web page content"
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "locations": [
+                                        {
+                                            "location": {
+                                                "logicalLocations": [
+                                                    {
+                                                        "fullyQualifiedName": "XSSHandler.ProcessRequest"
+                                                    }
+                                                ],
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "file:///home/sagil/usaf/testdata/usaf-benchmark-samples/cs/codeql-cs/CWE-079/XSS.cs"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 32,
+                                                        "endLine": 9,
+                                                        "snippet": {
+                                                            "text": "ctx"
+                                                        },
+                                                        "startColumn": 29,
+                                                        "startLine": 9
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "logicalLocations": [
+                                                    {
+                                                        "fullyQualifiedName": "XSSHandler.ProcessRequest"
+                                                    }
+                                                ],
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "file:///home/sagil/usaf/testdata/usaf-benchmark-samples/cs/codeql-cs/CWE-079/XSS.cs"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 59,
+                                                        "endLine": 9,
+                                                        "snippet": {
+                                                            "text": "\"page\""
+                                                        },
+                                                        "startColumn": 53,
+                                                        "startLine": 9
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "location": {
+                                                "logicalLocations": [
+                                                    {
+                                                        "fullyQualifiedName": "XSSHandler.ProcessRequest"
+                                                    }
+                                                ],
+                                                "physicalLocation": {
+                                                    "artifactLocation": {
+                                                        "uri": "file:///home/sagil/usaf/testdata/usaf-benchmark-samples/cs/codeql-cs/CWE-079/XSS.cs"
+                                                    },
+                                                    "region": {
+                                                        "endColumn": 82,
+                                                        "endLine": 9,
+                                                        "snippet": {
+                                                            "text": "\"\\\" was not found.\""
+                                                        },
+                                                        "startColumn": 63,
+                                                        "startLine": 9
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "fingerprints": {
+                        "precise_sink_and_sink_function": "c42ca878fadeb82199860566fe152ad1"
+                    },
+                    "level": "error",
+                    "locations": [
+                        {
+                            "logicalLocations": [
+                                {
+                                    "fullyQualifiedName": "XSSHandler.ProcessRequest"
+                                }
+                            ],
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "file:///home/sagil/usaf/testdata/usaf-benchmark-samples/cs/codeql-cs/CWE-079/XSS.cs"
+                                },
+                                "region": {
+                                    "endColumn": 82,
+                                    "endLine": 9,
+                                    "snippet": {
+                                        "text": "\"\\\" was not found.\""
+                                    },
+                                    "startColumn": 63,
+                                    "startLine": 9
+                                }
+                            }
+                        }
+                    ],
+                    "ruleId": "cs-xss"
+                }
+            ]
+        }
+    ],
+    "version": "2.1.0",
+    "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/cos02/schemas/sarif-schema-2.1.0.json"
+}

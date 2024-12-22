@@ -1,0 +1,4 @@
+scans:
+  - type: sast
+    roots:
+      - CWE-079

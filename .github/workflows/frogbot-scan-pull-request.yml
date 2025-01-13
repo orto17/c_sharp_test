@@ -16,6 +16,9 @@ jobs:
     steps:
       - uses: jfrog/frogbot@v2
         env:
+          JFROG_CLI_LOG_LEVEL: "DEBUG"
+          JF_PR_SHOW_SECRETS_COMMENTS: "TRUE"
+          
           # [Mandatory]
           # JFrog platform URL
           JF_URL: ${{ secrets.JF_URL }}

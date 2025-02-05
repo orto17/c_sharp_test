@@ -14,7 +14,10 @@ jobs:
     # "frogbot" GitHub environment can approve the pull request to be scanned.
     environment: frogbot
     steps:
-      - uses: jfrog/frogbot@v2
+      - run:
+          getFrogbotScriptPath=$(if [ -z "$JF_RELEASES_REPO" ]; then echo "https://releases.jfrog.io"; else echo "${JF_URL}/artifactory/${JF_RELEASES_REPO}"; fi)
+          curl -fLg "$getFrogbotScriptPath/artifactory/frogbot/v2/[RELEASE]/getFrogbot.sh" | sh
+          ./frogbot ${FROGBOT_CMD}
         env:
           JFROG_CLI_LOG_LEVEL: "DEBUG"
           JF_PR_SHOW_SECRETS_COMMENTS: "TRUE"

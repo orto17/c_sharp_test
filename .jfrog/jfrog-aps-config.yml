@@ -13,3 +13,9 @@ modules:
     exclude_scanners:
       - sast
       - iac
+    scanners:
+      # [Optional] Configuration for secrets scan
+      secrets:
+        # [Optional] Working directories specific to the secret scanner (Relative to source_root)
+        working_dirs:
+          - "secrets"

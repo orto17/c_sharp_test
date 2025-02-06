@@ -1,0 +1,21 @@
+# [Required] JFrog Applications Config version
+version: "1.0"
+
+modules:
+  # [Required] Module name
+  - name: c_sharp_test
+    # [Optional, default: "."] Application's root directory
+    source_root: "."
+    # [Optional] Directories to exclude from scanning across all scanners
+    exclude_patterns:
+      - "docs/"
+    # [Optional] Scanners to exclude from JFrog Advanced Security (Options: "secrets", "sast", "iac")
+    exclude_scanners:
+      - sast
+      - iac
+    scanners:
+      # [Optional] Configuration for secrets scan
+      secrets:
+        # [Optional] Working directories specific to the secret scanner (Relative to source_root)
+        working_dirs:
+          - "secrets"

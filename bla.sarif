@@ -6,7 +6,7 @@
                     "name": "\ud83d\udc38 JFrog SAST",
                     "rules": [
                         {
-                            "id": "cs-xss",
+                            "id": "cs-xss!",
                             "defaultConfiguration": {
                                 "parameters": {
                                     "properties": {

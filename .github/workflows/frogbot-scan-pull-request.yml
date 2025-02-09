@@ -21,6 +21,8 @@ jobs:
         env:
           JFROG_CLI_LOG_LEVEL: "DEBUG"
           JF_PR_SHOW_SECRETS_COMMENTS: "TRUE"
+          JF_CONFIG_PROFILE: "frogbot-config"
+          JF_USE_CONFIG_PROFILE: "True"
           
           # [Mandatory]
           # JFrog platform URL
